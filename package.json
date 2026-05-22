@@ -1,9 +1,11 @@
 {
   "name": "rabbitmq",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Express.js + RabbitMQ demo for publishing and displaying live messages.",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "amqplib": "^2.0.1"
+    "amqplib": "^2.0.1",
+    "express": "^5.2.1"
   }
 }

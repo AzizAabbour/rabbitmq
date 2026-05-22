@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Express + RabbitMQ Live Messages</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero card">
+        <div class="hero-copy">
+          <p class="eyebrow">Express.js + RabbitMQ</p>
+          <h1>Envoyer et voir les messages en direct</h1>
+          <p class="subtitle">
+            Tape un message, envoie-le à RabbitMQ, puis regarde-le apparaître
+            automatiquement dans la liste ci-dessous.
+          </p>
+        </div>
+        <div class="hero-meta">
+          <span class="pill">Queue: <strong>express_messages</strong></span>
+          <span class="pill">Flux: <strong>SSE</strong></span>
+        </div>
+      </section>
+
+      <section class="card composer">
+        <form id="message-form" class="composer-form">
+          <input
+            id="message-input"
+            type="text"
+            name="message"
+            placeholder="Écris un message..."
+            autocomplete="off"
+            required
+          />
+          <button id="send-button" type="submit">Envoyer</button>
+        </form>
+        <p id="status" class="status">Connexion en attente...</p>
+      </section>
+
+      <section class="card inbox">
+        <div class="section-head">
+          <h2>Messages reçus</h2>
+          <span id="message-count" class="count">0</span>
+        </div>
+        <p id="empty-state" class="empty-state">
+          Aucun message pour le moment. Envoie le premier pour remplir la liste.
+        </p>
+        <ul id="message-list" class="message-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="/client.js" defer></script>
+  </body>
+</html>
